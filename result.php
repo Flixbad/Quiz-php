@@ -1,12 +1,12 @@
 <?php
 session_start();
-require_once 'questions.php'; // Inclusion des questions
+require_once 'questions.php'; 
 
 $totalQuestions = count($questions);
 $score = $_SESSION['score'];
 $scoreColor = ($score >= ($totalQuestions / 2)) ? "green" : "red";
 
-// Récupérer les réponses de l'utilisateur
+
 $userAnswers = isset($_SESSION['userAnswers']) ? $_SESSION['userAnswers'] : [];
 ?>
 
@@ -24,15 +24,15 @@ $userAnswers = isset($_SESSION['userAnswers']) ? $_SESSION['userAnswers'] : [];
             color: <?php echo $scoreColor; ?>;
         }
         .correct-answer {
-            color: #28a745; /* Vert ✅ */
+            color: #28a745; 
             font-weight: bold;
         }
         .wrong-answer {
-            color: #dc3545; /* Rouge 🔴 */
+            color: #dc3545; 
             font-weight: bold;
         }
         .question-card {
-            background: #343a40; /* Gris foncé */
+            background: #343a40; 
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 10px;
