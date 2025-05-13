@@ -39,5 +39,5 @@ L'utilisateur répond à une série de questions et obtient un score final, acco
 ## 🔧 Installation et Utilisation
 ### **1️⃣ Cloner le projet**
 ```sh
-git clone https://github.com/ton-nom-utilisateur/Quiz.git
+git clone https://github.com/Flixbad/Quiz-php.git
 cd Quiz
