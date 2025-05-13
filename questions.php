@@ -134,6 +134,21 @@ $questions = [
         "question" => "Quel personnage de 'Street Fighter' crie 'Hadouken' en lançant une attaque ?",
         "options" => ["Ryu", "Chun-Li", "Guile", "Blanka"],
         "correct" => 0
+    ],
+    [
+        "question" => "Quel jeu vidéo se déroule dans la ville fictive de Los Santos ?",
+        "options" => ["Cyberpunk 2077", "Grand Theft Auto V", "Watch Dogs", "Mafia II"],
+        "correct" => 1
+    ],
+    [
+        "question" => "Dans 'Elden Ring', qui est le créateur de l'univers du jeu en collaboration avec FromSoftware ?",
+        "options" => ["J.K. Rowling", "George R.R. Martin", "Hideo Kojima", "Neil Druckmann"],
+        "correct" => 1
+    ],
+    [
+        "question" => "Quel jeu indépendant met en scène un chevalier explorant un monde sous-terrain infesté d'insectes ?",
+        "options" => ["Celeste", "Hollow Knight", "Shovel Knight", "Dead Cells"],
+        "correct" => 1
     ]
 ];
 ?>
