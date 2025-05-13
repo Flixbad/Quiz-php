@@ -8,7 +8,11 @@ $scoreColor = ($score >= ($totalQuestions / 2)) ? "green" : "red";
 
 
 $userAnswers = isset($_SESSION['userAnswers']) ? $_SESSION['userAnswers'] : [];
+
+$playerName = isset($_SESSION['playerName']) ? $_SESSION['playerName'] : "Joueur inconnu";
 ?>
+
+<h1 class="display-4">Bravo <?php echo htmlspecialchars($playerName); ?> ! 🎉</h1>
 
 <!DOCTYPE html>
 <html lang="fr">

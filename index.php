@@ -2,6 +2,13 @@
 session_start();
 require_once 'questions.php';
 
+// Vérifier si le joueur a entré son pseudo
+if (!isset($_SESSION['playerName'])) {
+    header("Location: start.php"); // Redirige vers le formulaire de pseudo
+    exit();
+}
+
+$playerName = $_SESSION['playerName']; // Récupération du pseudo
 
 if (!isset($_SESSION['score'])) {
     $_SESSION['score'] = 0;
@@ -12,7 +19,6 @@ if (!isset($_SESSION['questionIndex'])) {
 
 $index = $_SESSION['questionIndex'];
 
-
 if ($index >= count($questions)) {
     header('Location: result.php');
     exit();
@@ -20,13 +26,6 @@ if ($index >= count($questions)) {
 
 $question = $questions[$index];
 ?>
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -39,7 +38,9 @@ $question = $questions[$index];
 <body class="bg-dark text-white">
 
     <div class="container mt-5">
-        <div class="card bg-secondary text-white">
+        <h1 class="text-center">Bienvenue, <?php echo htmlspecialchars($playerName); ?> ! Bonne chance 🎮</h1>
+        
+        <div class="card bg-secondary text-white mt-3">
             <div class="card-body">
                 <h2 class="text-center">Question <?php echo $index + 1; ?>:</h2>
                 <p class="lead"><?php echo $question['question']; ?></p>
@@ -58,8 +59,8 @@ $question = $questions[$index];
             </div>
         </div>
     </div>
-    <script src="assets/js/scripts.js"></script>
 
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 </html>
