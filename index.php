@@ -2,13 +2,13 @@
 session_start();
 require_once 'questions.php';
 
-// Vérifier si le joueur a entré son pseudo
+
 if (!isset($_SESSION['playerName'])) {
-    header("Location: start.php"); // Redirige vers le formulaire de pseudo
+    header("Location: start.php"); 
     exit();
 }
 
-$playerName = $_SESSION['playerName']; // Récupération du pseudo
+$playerName = $_SESSION['playerName']; 
 
 if (!isset($_SESSION['score'])) {
     $_SESSION['score'] = 0;
