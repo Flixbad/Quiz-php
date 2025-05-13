@@ -1,10 +1,13 @@
 <?php
 session_start();
-require_once 'questions.php'; 
+require_once 'questions.php'; // Inclusion des questions
 
 $totalQuestions = count($questions);
 $score = $_SESSION['score'];
 $scoreColor = ($score >= ($totalQuestions / 2)) ? "green" : "red";
+
+// Récupérer les réponses de l'utilisateur
+$userAnswers = isset($_SESSION['userAnswers']) ? $_SESSION['userAnswers'] : [];
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +23,39 @@ $scoreColor = ($score >= ($totalQuestions / 2)) ? "green" : "red";
             font-weight: bold;
             color: <?php echo $scoreColor; ?>;
         }
+        .correct-answer {
+            color: #28a745; /* Vert ✅ */
+            font-weight: bold;
+        }
+        .wrong-answer {
+            color: #dc3545; /* Rouge 🔴 */
+            font-weight: bold;
+        }
+        .question-card {
+            background: #343a40; /* Gris foncé */
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body class="bg-dark text-white text-center">
     <div class="container mt-5">
         <h1 class="display-4">Quiz terminé !</h1>
         <p class="score"><?php echo $score; ?> / <?php echo $totalQuestions; ?></p>
+        
+        <h2 class="mt-4">Réponses :</h2>
+        <?php foreach ($questions as $index => $question): ?>
+            <div class="question-card">
+                <p><strong>Question <?php echo $index + 1; ?>:</strong> <?php echo $question['question']; ?></p>
+                <p class="correct-answer">✅ Bonne réponse : <?php echo $question['options'][$question['correct']]; ?></p>
+                <p class="<?php echo ($userAnswers[$index] == $question['correct']) ? 'correct-answer' : 'wrong-answer'; ?>">
+                    <?php echo ($userAnswers[$index] == $question['correct']) ? "✔️ Votre réponse : " : "❌ Votre réponse : "; ?>
+                    <?php echo $question['options'][$userAnswers[$index]]; ?>
+                </p>
+            </div>
+        <?php endforeach; ?>
+
         <a href="index.php" class="btn btn-primary mt-3">Recommencer</a>
     </div>
 </body>

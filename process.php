@@ -9,6 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['score']++;
         }
         $_SESSION['questionIndex']++;
+        if (!isset($_SESSION['userAnswers'])) {
+            $_SESSION['userAnswers'] = [];
+        }
+        $_SESSION['userAnswers'][$index] = $_POST['answer']; // Stocke la réponse donnée
+        
     }
 }
 
