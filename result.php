@@ -1,18 +1,16 @@
 <?php
 session_start();
-require_once 'questions.php'; 
+require_once 'questions.php';
 
+$playerName = isset($_SESSION['playerName']) ? $_SESSION['playerName'] : "Joueur inconnu";
 $totalQuestions = count($questions);
 $score = $_SESSION['score'];
 $scoreColor = ($score >= ($totalQuestions / 2)) ? "green" : "red";
 
-
-$userAnswers = isset($_SESSION['userAnswers']) ? $_SESSION['userAnswers'] : [];
-
-$playerName = isset($_SESSION['playerName']) ? $_SESSION['playerName'] : "Joueur inconnu";
+// Charger l'historique des scores
+$scoreFile = 'scores.json';
+$scores = file_exists($scoreFile) ? json_decode(file_get_contents($scoreFile), true) : [];
 ?>
-
-<h1 class="display-4">Bravo <?php echo htmlspecialchars($playerName); ?> ! 🎉</h1>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,40 +25,35 @@ $playerName = isset($_SESSION['playerName']) ? $_SESSION['playerName'] : "Joueur
             font-weight: bold;
             color: <?php echo $scoreColor; ?>;
         }
-        .correct-answer {
-            color: #28a745; 
-            font-weight: bold;
-        }
-        .wrong-answer {
-            color: #dc3545; 
-            font-weight: bold;
-        }
-        .question-card {
-            background: #343a40; 
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body class="bg-dark text-white text-center">
     <div class="container mt-5">
-        <h1 class="display-4">Quiz terminé !</h1>
+        <h1 class="display-4">Bravo <?php echo htmlspecialchars($playerName); ?> ! 🎉</h1>
         <p class="score"><?php echo $score; ?> / <?php echo $totalQuestions; ?></p>
-        
-        <h2 class="mt-4">Réponses :</h2>
-        <?php foreach ($questions as $index => $question): ?>
-            <div class="question-card">
-                <p><strong>Question <?php echo $index + 1; ?>:</strong> <?php echo $question['question']; ?></p>
-                <p class="correct-answer">✅ Bonne réponse : <?php echo $question['options'][$question['correct']]; ?></p>
-                <p class="<?php echo ($userAnswers[$index] == $question['correct']) ? 'correct-answer' : 'wrong-answer'; ?>">
-                    <?php echo ($userAnswers[$index] == $question['correct']) ? "✔️ Votre réponse : " : "❌ Votre réponse : "; ?>
-                    <?php echo $question['options'][$userAnswers[$index]]; ?>
-                </p>
-            </div>
-        <?php endforeach; ?>
 
-        <a href="index.php" class="btn btn-primary mt-3">Recommencer</a>
+        <h2 class="mt-4">Historique des scores :</h2>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>Score</th>
+                    <th>Questions totales</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($scores as $entry): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($entry['pseudo']); ?></td>
+                        <td><?php echo $entry['score']; ?></td>
+                        <td><?php echo $entry['total']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+        <a href="answers.php" class="btn btn-warning mt-3">Voir les corrections</a> <!-- Bouton pour voir les réponses -->
+        <a href="start.php" class="btn btn-primary mt-3">Recommencer</a>
     </div>
 </body>
 </html>
