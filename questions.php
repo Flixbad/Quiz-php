@@ -69,6 +69,71 @@ $questions = [
         "question" => "Dans 'League of Legends', combien de joueurs composent une équipe standard ?",
         "options" => ["3", "4", "5", "6"],
         "correct" => 2
+    ],
+    [
+        "question" => "Quel est le jeu le plus vendu de tous les temps ?",
+        "options" => ["Minecraft", "Grand Theft Auto V", "Tetris", "Wii Sports"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Dans 'Dark Souls', que signifie l'objet Estus Flask ?",
+        "options" => ["Un bouclier magique", "Une potion de soin", "Un artefact permettant de voyager", "Un sort puissant"],
+        "correct" => 1
+    ],
+    [
+        "question" => "Quel jeu a introduit le personnage emblématique Lara Croft ?",
+        "options" => ["Uncharted", "Assassin's Creed", "Tomb Raider", "The Last of Us"],
+        "correct" => 2
+    ],
+    [
+        "question" => "Dans 'Super Smash Bros.', quel personnage n'est PAS un combattant jouable ?",
+        "options" => ["Mario", "Sonic", "Crash Bandicoot", "Pikachu"],
+        "correct" => 2
+    ],
+    [
+        "question" => "Quel jeu met en scène une bataille entre les factions 'Terran', 'Zerg' et 'Protoss' ?",
+        "options" => ["Warcraft III", "Command & Conquer", "StarCraft", "Age of Empires"],
+        "correct" => 2
+    ],
+    [
+        "question" => "Quel est le pouvoir principal de Samus Aran dans 'Metroid' ?",
+        "options" => ["Voyager dans le temps", "Se transformer en boule", "Manipuler la gravité", "Contrôler les éléments"],
+        "correct" => 1
+    ],
+    [
+        "question" => "Dans 'Resident Evil', que signifie 'S.T.A.R.S.' ?",
+        "options" => ["Special Tactics and Rescue Service", "Strategic Team Against Rogue Soldiers", "Super Tactical Assault Response Squad", "Security Team for Advanced Recon"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Quel est le Pokémon légendaire emblématique de Pokémon Rouge ?",
+        "options" => ["Mewtwo", "Rayquaza", "Lugia", "Arceus"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Dans 'Counter-Strike', quelle arme est la plus chère du jeu ?",
+        "options" => ["AWP", "Desert Eagle", "M4A1", "AK-47"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Quelle console a popularisé le jeu vidéo dans les années 80 ?",
+        "options" => ["PlayStation 1", "Atari 2600", "Nintendo Entertainment System (NES)", "Sega Genesis"],
+        "correct" => 2
+    ],
+    [
+        "question" => "Quel jeu utilise la phrase 'The cake is a lie' ?",
+        "options" => ["Half-Life", "Portal", "Minecraft", "Bioshock"],
+        "correct" => 1
+    ],
+    [
+        "question" => "Dans 'The Last of Us', quel est le nom du protagoniste principal ?",
+        "options" => ["Joel", "Nathan", "Ellie", "Arthur"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Quel personnage de 'Street Fighter' crie 'Hadouken' en lançant une attaque ?",
+        "options" => ["Ryu", "Chun-Li", "Guile", "Blanka"],
+        "correct" => 0
     ]
 ];
 ?>
