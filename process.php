@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $scores = file_exists($scoreFile) ? json_decode(file_get_contents($scoreFile), true) : [];
 
         
-        $scores[] = ["pseudo" => $playerName, "score" => $score, "total" => count($questions)];
+        $scores[] = ["pseudo" => $playerName, "score" => $score, "total" => count($questions), "answers"=> $_SESSION['userAnswers']];
 
         
         file_put_contents($scoreFile, json_encode($scores, JSON_PRETTY_PRINT));

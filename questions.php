@@ -1,54 +1,27 @@
 <?php
 $questions = [
+    
     [
-        "question" => "Quel est le nom du personnage principal de la série 'The Legend of Zelda' ?",
-        "options" => ["Zelda", "Link", "Ganondorf", "Epona"],
-        "correct" => 1
-    ],
-    [
-        "question" => "Dans quel jeu vidéo Mario apparaît-il pour la première fois ?",
-        "options" => ["Super Mario Bros.", "Donkey Kong", "Mario Kart", "Mario Party"],
-        "correct" => 1
-    ],
-    [
-        "question" => "Quel est le nom de l'arme emblématique de Cloud dans 'Final Fantasy VII' ?",
-        "options" => ["Gunblade", "Masamune", "Buster Sword", "Excalibur"],
+        "question" => "Quel est le tout premier jeu vidéo commercialisé ?",
+        "options" => ["Pac-Man", "Space Invaders", "Pong", "Asteroids"],
         "correct" => 2
     ],
     [
-        "question" => "Dans 'Minecraft', quel matériau est nécessaire pour fabriquer un portail vers le Nether ?",
-        "options" => ["Pierre", "Obsidienne", "Fer", "Diamant"],
+        "question" => "Quelle console a été la première à introduire la 3D ?",
+        "options" => ["PlayStation 1", "Nintendo 64", "Sega Saturn", "Atari Jaguar"],
         "correct" => 1
     ],
     [
-        "question" => "Quel est le nom du créateur de la série 'Metal Gear' ?",
-        "options" => ["Shigeru Miyamoto", "Hideo Kojima", "Tetsuya Nomura", "Masahiro Sakurai"],
+        "question" => "Dans 'Super Mario Bros.', qui est l'ennemi principal ?",
+        "options" => ["Wario", "Bowser", "Koopa Troopa", "Donkey Kong"],
         "correct" => 1
     ],
+
+    
     [
-        "question" => "Dans 'Pokémon', quel est le type principal de Pikachu ?",
-        "options" => ["Feu", "Eau", "Électrique", "Plante"],
-        "correct" => 2
-    ],
-    [
-        "question" => "Dans 'The Elder Scrolls V: Skyrim', quel cri de dragon est utilisé pour repousser les ennemis ?",
-        "options" => ["Fus Ro Dah", "Yol Toor Shul", "Od Ah Viing", "Durnehviir"],
-        "correct" => 0
-    ],
-    [
-        "question" => "Dans 'Overwatch', quel personnage est un gorille scientifique ?",
-        "options" => ["Winston", "Reinhardt", "Zenyatta", "Roadhog"],
-        "correct" => 0
-    ],
-    [
-        "question" => "Dans 'Tetris', combien de blocs composent une pièce standard ?",
-        "options" => ["3", "4", "5", "6"],
+        "question" => "Quel jeu est considéré comme le premier RPG japonais ?",
+        "options" => ["Final Fantasy", "Dragon Quest", "Chrono Trigger", "Secret of Mana"],
         "correct" => 1
-    ],
-    [
-        "question" => "Dans 'Fortnite', quel est le nom de l'île principale où se déroule le jeu ?",
-        "options" => ["Battle Island", "Victory Island", "Apollo Island", "Athena Island"],
-        "correct" => 3
     ],
     [
         "question" => "Dans 'The Witcher 3', quel est le nom de la fille adoptive de Geralt ?",
@@ -56,78 +29,66 @@ $questions = [
         "correct" => 2
     ],
     [
-        "question" => "Dans 'Animal Crossing', quel est le nom du personnage qui joue de la guitare ?",
-        "options" => ["Tom Nook", "K.K. Slider", "Isabelle", "Blathers"],
+        "question" => "Quel jeu introduit la classe 'Mage Sanglant' ?",
+        "options" => ["Diablo III", "Dragon Age: Origins", "Dark Souls", "Divinity: Original Sin"],
         "correct" => 1
     ],
+
+    
     [
-        "question" => "Dans 'Halo', quel est le surnom du personnage principal ?",
-        "options" => ["Master Chief", "Spartan", "Cortana", "Arbiter"],
+        "question" => "Quel jeu a popularisé les compétitions eSport en FPS ?",
+        "options" => ["Counter-Strike", "Call of Duty", "Battlefield", "Doom"],
         "correct" => 0
     ],
     [
-        "question" => "Dans 'League of Legends', combien de joueurs composent une équipe standard ?",
-        "options" => ["3", "4", "5", "6"],
-        "correct" => 2
-    ],
-    [
-        "question" => "Quel est le jeu le plus vendu de tous les temps ?",
-        "options" => ["Minecraft", "Grand Theft Auto V", "Tetris", "Wii Sports"],
-        "correct" => 0
-    ],
-    [
-        "question" => "Dans 'Dark Souls', que signifie l'objet Estus Flask ?",
-        "options" => ["Un bouclier magique", "Une potion de soin", "Un artefact permettant de voyager", "Un sort puissant"],
+        "question" => "Quel studio développe la franchise 'Halo' depuis 'Halo 4' ?",
+        "options" => ["Bungie", "343 Industries", "Activision", "Epic Games"],
         "correct" => 1
     ],
     [
-        "question" => "Quel jeu a introduit le personnage emblématique Lara Croft ?",
-        "options" => ["Uncharted", "Assassin's Creed", "Tomb Raider", "The Last of Us"],
+        "question" => "Dans 'Overwatch', quel personnage est un médecin ?",
+        "options" => ["Reaper", "Mercy", "Roadhog", "Tracer"],
+        "correct" => 1
+    ],
+
+   
+    [
+        "question" => "Quelle société a créé la PlayStation ?",
+        "options" => ["Nintendo", "Sega", "Sony", "Microsoft"],
         "correct" => 2
     ],
     [
-        "question" => "Dans 'Super Smash Bros.', quel personnage n'est PAS un combattant jouable ?",
-        "options" => ["Mario", "Sonic", "Crash Bandicoot", "Pikachu"],
-        "correct" => 2
-    ],
-    [
-        "question" => "Quel jeu met en scène une bataille entre les factions 'Terran', 'Zerg' et 'Protoss' ?",
-        "options" => ["Warcraft III", "Command & Conquer", "StarCraft", "Age of Empires"],
-        "correct" => 2
-    ],
-    [
-        "question" => "Quel est le pouvoir principal de Samus Aran dans 'Metroid' ?",
-        "options" => ["Voyager dans le temps", "Se transformer en boule", "Manipuler la gravité", "Contrôler les éléments"],
+        "question" => "Quel est le premier jeu de simulation de vie ?",
+        "options" => ["SimCity", "The Sims", "Animal Crossing", "RollerCoaster Tycoon"],
         "correct" => 1
     ],
     [
-        "question" => "Dans 'Resident Evil', que signifie 'S.T.A.R.S.' ?",
-        "options" => ["Special Tactics and Rescue Service", "Strategic Team Against Rogue Soldiers", "Super Tactical Assault Response Squad", "Security Team for Advanced Recon"],
+        "question" => "Quel jeu a été élu 'Jeu de l'année' aux Game Awards 2022 ?",
+        "options" => ["Elden Ring", "God of War Ragnarok", "Horizon Forbidden West", "Stray"],
+        "correct" => 0
+    ],
+
+    
+    [
+        "question" => "Dans quel jeu indépendant incarne-t-on une petite fille escaladant une montagne ?",
+        "options" => ["Celeste", "Hollow Knight", "Shovel Knight", "Undertale"],
         "correct" => 0
     ],
     [
-        "question" => "Quel est le Pokémon légendaire emblématique de Pokémon Rouge ?",
+        "question" => "Quel jeu indépendant met en scène une ville cyberpunk et un chat ?",
+        "options" => ["Stray", "Cyberpunk 2077", "Inside", "Little Nightmares"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Quel jeu indépendant est basé sur un rogue-like avec cartes ?",
+        "options" => ["Slay the Spire", "Dead Cells", "Darkest Dungeon", "Hades"],
+        "correct" => 0
+    ],
+
+    
+    [
+        "question" => "Quel Pokémon légendaire est emblématique de Pokémon Rouge ?",
         "options" => ["Mewtwo", "Rayquaza", "Lugia", "Arceus"],
-        "correct" => 0
-    ],
-    [
-        "question" => "Dans 'Counter-Strike', quelle arme est la plus chère du jeu ?",
-        "options" => ["AWP", "Desert Eagle", "M4A1", "AK-47"],
-        "correct" => 0
-    ],
-    [
-        "question" => "Quelle console a popularisé le jeu vidéo dans les années 80 ?",
-        "options" => ["PlayStation 1", "Atari 2600", "Nintendo Entertainment System (NES)", "Sega Genesis"],
-        "correct" => 2
-    ],
-    [
-        "question" => "Quel jeu utilise la phrase 'The cake is a lie' ?",
-        "options" => ["Half-Life", "Portal", "Minecraft", "Bioshock"],
-        "correct" => 1
-    ],
-    [
-        "question" => "Dans 'The Last of Us', quel est le nom du protagoniste principal ?",
-        "options" => ["Joel", "Nathan", "Ellie", "Arthur"],
         "correct" => 0
     ],
     [
@@ -136,19 +97,71 @@ $questions = [
         "correct" => 0
     ],
     [
-        "question" => "Quel jeu vidéo se déroule dans la ville fictive de Los Santos ?",
-        "options" => ["Cyberpunk 2077", "Grand Theft Auto V", "Watch Dogs", "Mafia II"],
+        "question" => "Dans 'Grand Theft Auto V', quel est le nom du personnage ex-braqueur reconverti ?",
+        "options" => ["Franklin", "Trevor", "Michael", "Niko"],
+        "correct" => 2
+    ],
+
+    
+    [
+        "question" => "Quel jeu a été le premier à introduire une carte entièrement ouverte ?",
+        "options" => ["The Legend of Zelda", "GTA III", "Elder Scrolls II: Daggerfall", "Red Dead Redemption"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Dans 'League of Legends', combien de champions étaient disponibles lors de la sortie du jeu en 2009 ?",
+        "options" => ["20", "40", "60", "80"],
         "correct" => 1
     ],
     [
-        "question" => "Dans 'Elden Ring', qui est le créateur de l'univers du jeu en collaboration avec FromSoftware ?",
-        "options" => ["J.K. Rowling", "George R.R. Martin", "Hideo Kojima", "Neil Druckmann"],
+        "question" => "Dans 'Minecraft', quel matériau est utilisé pour fabriquer un portail du Nether ?",
+        "options" => ["Pierre", "Obsidienne", "Fer", "Diamant"],
         "correct" => 1
     ],
     [
-        "question" => "Quel jeu indépendant met en scène un chevalier explorant un monde sous-terrain infesté d'insectes ?",
-        "options" => ["Celeste", "Hollow Knight", "Shovel Knight", "Dead Cells"],
+        "question" => "Quel jeu de stratégie en temps réel met en scène trois factions : Terran, Zerg et Protoss ?",
+        "options" => ["Warcraft III", "Command & Conquer", "StarCraft", "Age of Empires"],
+        "correct" => 2
+    ],
+    [
+        "question" => "Dans 'Resident Evil', que signifie 'S.T.A.R.S.' ?",
+        "options" => ["Special Tactics and Rescue Service", "Strategic Team Against Rogue Soldiers", "Super Tactical Assault Response Squad", "Security Team for Advanced Recon"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Quel jeu utilise la phrase 'The cake is a lie' ?",
+        "options" => ["Half-Life", "Portal", "Minecraft", "Bioshock"],
         "correct" => 1
+    ],
+    [
+        "question" => "Quel est le nom du créateur de 'Minecraft' ?",
+        "options" => ["Markus Persson", "Tim Sweeney", "Gabe Newell", "Shigeru Miyamoto"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Dans 'Dark Souls', quel est le surnom du boss final du premier jeu ?",
+        "options" => ["Seigneur des Cendres", "Le Roi Sombre", "Gwyn, Seigneur de la Lumière", "Artorias"],
+        "correct" => 2
+    ],
+    [
+        "question" => "Quelle console a marqué le début de la guerre PlayStation vs Xbox ?",
+        "options" => ["PlayStation 1 vs Nintendo 64", "PlayStation 2 vs Xbox", "PlayStation 3 vs Xbox 360", "PlayStation 4 vs Xbox One"],
+        "correct" => 1
+    ],
+    [
+        "question" => "Quel jeu indépendant est inspiré des 'Metroidvania' avec un chevalier insecte ?",
+        "options" => ["Hollow Knight", "Celeste", "Shovel Knight", "Dead Cells"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Dans 'The Legend of Zelda: Ocarina of Time', quel temple est considéré comme le plus difficile ?",
+        "options" => ["Temple de l'eau", "Temple du feu", "Temple de l'ombre", "Temple des esprits"],
+        "correct" => 0
+    ],
+    [
+        "question" => "Quel jeu populaire est souvent appelé le 'Tetris des temps modernes' ?",
+        "options" => ["Candy Crush", "Puyo Puyo", "Tetris Effect", "2048"],
+        "correct" => 0
     ]
 ];
 ?>

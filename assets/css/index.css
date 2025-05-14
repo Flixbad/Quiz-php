@@ -1,0 +1,98 @@
+body {
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+}
+
+.quiz-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.quiz-logo {
+    width: 80px;
+    height: auto;
+}
+
+.quiz-title {
+    font-size: 28px;
+    margin-top: 80px;
+}
+
+.quiz-music-btn {
+    margin-top: 10px;
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.arcade-timer {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ffcc00, #ff3300);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 15px #ff3300;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 15px #ff3300; }
+    100% { transform: scale(1.1); box-shadow: 0 0 20px #ff6600; }
+}
+
+.quiz-card {
+    background: #343a40;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz-question {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quiz-radio {
+    margin-right: 10px;
+}
+
+.quiz-label {
+    font-size: 18px;
+}
+
+.quiz-submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.quiz-submit-btn:hover {
+    background-color: #0056b3;
+}

@@ -2,9 +2,9 @@
 session_start();
 require_once 'questions.php';
 
-$playerName = isset($_SESSION['playerName']) ? $_SESSION['playerName'] : "Joueur inconnu";
-$totalQuestions = count($questions);
-$userAnswers = isset($_SESSION['userAnswers']) ? $_SESSION['userAnswers'] : [];
+$scoreFile = 'scores.json';
+$scores = file_exists($scoreFile) ? json_decode(file_get_contents($scoreFile), true) : [];
+$selectedPlayer = isset($_GET['player']) ? $_GET['player'] : null;
 ?>
 
 <!DOCTYPE html>
@@ -14,40 +14,62 @@ $userAnswers = isset($_SESSION['userAnswers']) ? $_SESSION['userAnswers'] : [];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Corrections du Quiz</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .correct-answer {
-            color: #28a745; /* Vert ✅ */
-            font-weight: bold;
-        }
-        .wrong-answer {
-            color: #dc3545; /* Rouge ❌ */
-            font-weight: bold;
-        }
-        .question-card {
-            background: #343a40;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-dark text-white text-center">
-    <div class="container mt-5">
-        <h1 class="display-4">Corrections du Quiz</h1>
-        <p class="lead">Voici les bonnes réponses et celles que tu as choisies :</p>
+<body>
 
-        <?php foreach ($questions as $index => $question): ?>
-            <div class="question-card">
-                <p><strong>Question <?php echo $index + 1; ?>:</strong> <?php echo $question['question']; ?></p>
-                <p class="correct-answer">✅ Bonne réponse : <?php echo $question['options'][$question['correct']]; ?></p>
-                <p class="<?php echo ($userAnswers[$index] == $question['correct']) ? 'correct-answer' : 'wrong-answer'; ?>">
-                    <?php echo ($userAnswers[$index] == $question['correct']) ? "✔️ Ta réponse : " : "❌ Ta réponse : "; ?>
-                    <?php echo $question['options'][$userAnswers[$index]]; ?>
-                </p>
-            </div>
-        <?php endforeach; ?>
+<header class="quiz-header">
+    <img src="assets/img/logo.png" alt="Logo du Quiz" class="quiz-logo">
+</header>
 
-        <a href="start.php" class="btn btn-primary mt-3">Recommencer</a>
-    </div>
+<div class="container">
+    <h1 class="quiz-title">Corrections du Quiz</h1>
+
+    <?php if (!$selectedPlayer): ?>
+        <p class="quiz-subtitle">Sélectionne un joueur pour voir ses réponses :</p>
+        <table class="quiz-table">
+            <thead>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>Score</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($scores as $entry): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($entry['pseudo']); ?></td>
+                        <td><?php echo $entry['score']; ?> / <?php echo $entry['total']; ?></td>
+                        <td><a href="?player=<?php echo urlencode($entry['pseudo']); ?>" class="quiz-btn">Voir les réponses</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <h2 class="quiz-subtitle">📜 Résultats de <?php echo htmlspecialchars($selectedPlayer); ?></h2>
+
+        <?php
+        foreach ($scores as $entry) {
+            if ($entry['pseudo'] === $selectedPlayer) {
+                foreach ($questions as $index => $question) {
+                    $playerAnswer = $entry['answers'][$index] ?? null;
+                    ?>
+                    <div class="quiz-card">
+                        <p><strong>Question <?php echo $index + 1; ?>:</strong> <?php echo $question['question']; ?></p>
+                        <p class="quiz-correct">✅ Bonne réponse : <?php echo $question['options'][$question['correct']]; ?></p>
+                        <p class="<?php echo ($playerAnswer == $question['correct']) ? 'quiz-correct' : 'quiz-wrong'; ?>">
+                            <?php echo ($playerAnswer == $question['correct']) ? "✔️ Réponse : " : "❌ Réponse : "; ?>
+                            <?php echo isset($question['options'][$playerAnswer]) ? $question['options'][$playerAnswer] : "Non répondu"; ?>
+                        </p>
+                    </div>
+                    <?php
+                }
+            }
+        }
+        ?>
+        <a href="answers.php" class="quiz-btn">⬅️ Retour</a>
+    <?php endif; ?>
+</div>
+
 </body>
 </html>

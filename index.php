@@ -2,7 +2,6 @@
 session_start();
 require_once 'questions.php';
 
-
 if (!isset($_SESSION['playerName'])) {
     header("Location: start.php"); 
     exit();
@@ -32,41 +31,52 @@ $question = $questions[$index];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Quiz Jeux Vidéo</title>
+    <title>Le Quiz de Flix</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-dark text-white">
+<body>
 
-    <div class="container mt-5">
-        <h1 class="text-center">Bienvenue, <?php echo htmlspecialchars($playerName); ?> ! Bonne chance 🎮</h1>
-        <button id="toggleMusic" class="btn btn-warning mt-3">🎵 Couper la musique</button>
+    <header class="quiz-header">
+        <img src="assets/img/logo.png" alt="Logo du Quiz" class="quiz-logo">
+    </header>
+
+    <div class="container">
+        <h1 class="quiz-title">Bienvenue, <?php echo htmlspecialchars($playerName); ?> ! Bonne chance 🎮</h1>
+        <button id="toggleMusic" class="quiz-music-btn">🎵 Couper la musique</button>
 
         
-        <div class="card bg-secondary text-white mt-3">
+        <div class="timer-container">
+    <div class="arcade-timer">
+        <span id="timer-value">15</span>
+    </div>
+</div>
+
+
+        <div class="quiz-card">
             <div class="card-body">
-                <h2 class="text-center">Question <?php echo $index + 1; ?>:</h2>
-                <p class="lead"><?php echo $question['question']; ?></p>
+                <h2 class="quiz-question">Question <?php echo $index + 1; ?>:</h2>
+                <p class="quiz-text"><?php echo $question['question']; ?></p>
                 
-                <form action="process.php" method="POST">
+                <form id="quizForm" action="process.php" method="POST">
                     <?php foreach ($question['options'] as $key => $option): ?>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="answer" value="<?php echo $key; ?>" id="option<?php echo $key; ?>">
-                            <label class="form-check-label" for="option<?php echo $key; ?>">
+                        <div class="quiz-option">
+                            <input class="quiz-radio" type="radio" name="answer" value="<?php echo $key; ?>" id="option<?php echo $key; ?>">
+                            <label class="quiz-label" for="option<?php echo $key; ?>">
                                 <?php echo $option; ?>
                             </label>
                         </div>
                     <?php endforeach; ?>
-                    <button type="submit" class="btn btn-primary mt-3 w-100">Valider</button>
+                    <button type="submit" class="quiz-submit-btn">Valider</button>
                 </form>
             </div>
         </div>
     </div>
 
     <audio id="backgroundMusic" loop>
-    <source src="assets/audio/arcade_music.mp3" type="audio/mp3">
-    Votre navigateur ne supporte pas l’audio.
-</audio>
-
+        <source src="assets/audio/arcade_music.mp3" type="audio/mp3">
+        Votre navigateur ne supporte pas l’audio.
+    </audio>
 
     <script src="assets/js/scripts.js"></script>
 

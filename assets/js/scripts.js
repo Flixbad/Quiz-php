@@ -24,4 +24,39 @@ document.addEventListener("DOMContentLoaded", function () {
             this.textContent = "🎵 Activer la musique";
         }
     });
+
+    
+    let timeLeft = 15; 
+    let timerElement = document.getElementById("timer-value");
+    let quizForm = document.getElementById("quizForm");
+
+    function updateTimer() {
+        if (timeLeft > 0) {
+            timerElement.textContent = timeLeft;
+            timeLeft--;
+
+           
+            if (timeLeft <= 3) {
+                timerElement.style.color = "red";
+                timerElement.style.animation = "shake 0.5s infinite alternate";
+            }
+        } else {
+            quizForm.submit(); 
+        }
+    }
+
+    
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes shake {
+            0% { transform: rotate(0); }
+            25% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    setInterval(updateTimer, 1000);
 });
