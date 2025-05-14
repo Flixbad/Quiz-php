@@ -39,6 +39,8 @@ $question = $questions[$index];
 
     <div class="container mt-5">
         <h1 class="text-center">Bienvenue, <?php echo htmlspecialchars($playerName); ?> ! Bonne chance 🎮</h1>
+        <button id="toggleMusic" class="btn btn-warning mt-3">🎵 Couper la musique</button>
+
         
         <div class="card bg-secondary text-white mt-3">
             <div class="card-body">
@@ -59,6 +61,12 @@ $question = $questions[$index];
             </div>
         </div>
     </div>
+
+    <audio id="backgroundMusic" loop>
+    <source src="assets/audio/arcade_music.mp3" type="audio/mp3">
+    Votre navigateur ne supporte pas l’audio.
+</audio>
+
 
     <script src="assets/js/scripts.js"></script>
 
